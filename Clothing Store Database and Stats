@@ -1,0 +1,35 @@
+--Create a clothing store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, color TEXT, size TEXT);
+
+INSERT INTO store VALUES(1,"Hat",20,"Black","Small"); 
+INSERT INTO store VALUES(2,"Pants",50,"Tan","Medium");
+INSERT INTO store VALUES(3,"Shirt",35,"White","Large");
+INSERT INTO store VALUES(4,"Shoe",80,"Green","Small");
+INSERT INTO store VALUES(5,"Pants",40,"Red","XLarge");
+INSERT INTO store VALUES(6,"Shirt",65,"Red","Small");
+INSERT INTO store VALUES(7,"Hat",30,"Blue","Large");
+INSERT INTO store VALUES(8,"Shoe",150,"Purple","Medium");
+INSERT INTO store VALUES(9,"Gloves",15,"Blue","Medium");
+INSERT INTO store VALUES(10,"Socks",10,"Pink","XLarge");
+INSERT INTO store VALUES(11,"Shirt",20,"Black","Small");
+INSERT INTO store VALUES(12,"Jacket",140,"Orange","Large");
+INSERT INTO store VALUES(13,"Jacket",100,"Yellow","Small");
+INSERT INTO store VALUES(14,"Gloves",30,"Purple","Medium");
+INSERT INTO store VALUES(15,"Socks",15,"White","XLarge");
+
+--display the database ordered by price.
+SELECT * FROM store
+ORDER BY price desc;
+
+--what is the avg price of items that are large?
+SELECT AVG(price) "avg large item price"
+FROM store
+where size='Large';
+
+--what are the 5 highest items?
+SELECT item, price
+FROM store
+ORDER BY price desc
+limit 5;
+
